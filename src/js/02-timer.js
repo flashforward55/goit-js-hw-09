@@ -28,3 +28,5 @@ flatpickr(datePicker, {
     }
   },
 });
+
+let countdownIntervalId = null;

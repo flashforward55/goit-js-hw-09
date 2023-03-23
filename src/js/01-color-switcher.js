@@ -18,3 +18,10 @@ function startColorChange() {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
 }
+
+function stopColorChange() {
+  startButton.disabled = false;
+  stopButton.disabled = true;
+
+  clearInterval(intervalId);
+}

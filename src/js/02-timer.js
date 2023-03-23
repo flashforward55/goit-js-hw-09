@@ -30,3 +30,8 @@ flatpickr(datePicker, {
 });
 
 let countdownIntervalId = null;
+
+// Helper function to add leading zero
+function addLeadingZero(value) {
+  return value.toString().padStart(2, '0');
+}

@@ -51,3 +51,13 @@ function countdown(endDate) {
   minutesValue.textContent = addLeadingZero(minutes);
   secondsValue.textContent = addLeadingZero(seconds);
 }
+
+// Event listener for start button
+startButton.addEventListener('click', () => {
+  const endDate = new Date(datePicker.value).getTime();
+  countdownIntervalId = setInterval(() => {
+    countdown(endDate);
+  }, 1000);
+  startButton.disabled = true;
+  datePicker.disabled = true;
+});

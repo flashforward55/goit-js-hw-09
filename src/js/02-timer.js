@@ -44,3 +44,10 @@ function countdown(endDate) {
     Notify.success('Timer finished');
     return;
   }
+
+  const { days, hours, minutes, seconds } = convertMs(ms);
+  daysValue.textContent = addLeadingZero(days);
+  hoursValue.textContent = addLeadingZero(hours);
+  minutesValue.textContent = addLeadingZero(minutes);
+  secondsValue.textContent = addLeadingZero(seconds);
+}

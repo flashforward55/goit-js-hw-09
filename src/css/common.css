@@ -38,10 +38,14 @@ button[data-stop] {
   transition: opacity 0.3s;
 }
 
+button[data-stop] {
+  background-color: red;
+}
+
 button[data-start]:disabled,
 button[data-stop]:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
+  /* cursor: not-allowed; */
 }
 
 /* Style for the timer */

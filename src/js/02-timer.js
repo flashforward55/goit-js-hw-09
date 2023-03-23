@@ -9,6 +9,7 @@ const daysValue = document.querySelector('span[data-days]');
 const hoursValue = document.querySelector('span[data-hours]');
 const minutesValue = document.querySelector('span[data-minutes]');
 const secondsValue = document.querySelector('span[data-seconds]');
+
 startButton.disabled = true;
 
 // Initialize flatpickr date picker
@@ -58,6 +59,8 @@ startButton.addEventListener('click', () => {
     countdown(endDate);
   }, 1000);
   startButton.disabled = true;
+  startButton.style.cursor = 'not-allowed';
+  startButton.style.backgroundColor = 'red';
   datePicker.disabled = true;
   datePicker.style.cursor = 'not-allowed';
 });

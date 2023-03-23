@@ -35,3 +35,12 @@ let countdownIntervalId = null;
 function addLeadingZero(value) {
   return value.toString().padStart(2, '0');
 }
+
+// Countdown function
+function countdown(endDate) {
+  const ms = endDate - new Date().getTime();
+  if (ms < 0) {
+    clearInterval(countdownIntervalId);
+    Notify.success('Timer finished');
+    return;
+  }

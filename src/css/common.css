@@ -76,6 +76,7 @@ button[data-stop]:disabled {
   justify-content: center;
 }
 
+/* Style for the promises */
 .form {
   display: flex;
   flex-direction: column;
@@ -86,6 +87,13 @@ button[data-stop]:disabled {
 .form label {
   font-size: 16px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form label span {
+  margin-right: 10px;
 }
 
 .form input {

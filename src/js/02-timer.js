@@ -59,6 +59,7 @@ startButton.addEventListener('click', () => {
   }, 1000);
   startButton.disabled = true;
   datePicker.disabled = true;
+  datePicker.style.cursor = 'not-allowed';
 });
 
 // Function to convert milliseconds to days, hours, minutes, and seconds

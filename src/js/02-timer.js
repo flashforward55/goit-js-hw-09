@@ -22,7 +22,6 @@ flatpickr(datePicker, {
     const currentDate = new Date();
     if (selectedDate < currentDate) {
       Notify.failure('Please choose a date in the future');
-      startButton.disabled = true;
     } else {
       startButton.disabled = false;
     }

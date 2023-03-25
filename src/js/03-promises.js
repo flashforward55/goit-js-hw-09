@@ -48,3 +48,7 @@ function handleFormSubmit(event) {
   stepInput.value = '';
   amountInput.value = '';
 }
+
+// add event listener to form submit event
+const form = document.querySelector('.form');
+form.addEventListener('submit', handleFormSubmit);

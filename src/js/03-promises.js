@@ -29,4 +29,7 @@ function handleFormSubmit(event) {
 
   event.currentTarget.reset();
   // reset the form inputs
+  delayInput.value = '';
+  stepInput.value = '';
+  amountInput.value = '';
 }

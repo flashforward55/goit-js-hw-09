@@ -96,7 +96,7 @@ button[data-stop]:disabled {
   justify-content: space-between;
 }
 
-.form label span {
+.form label {
   margin-right: 10px;
 }
 

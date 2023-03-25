@@ -18,20 +18,21 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   // get user inputs from form fields
-  const delayInput = document.querySelector('input[name="delay"]');
-  const stepInput = document.querySelector('input[name="step"]');
-  const amountInput = document.querySelector('input[name="amount"]');
-  const firstDelay = Number(delayInput.value);
-  const delayStep = Number(stepInput.value);
-  const amount = Number(amountInput.value);
+  const {
+    elements: { delay, step, amount },
+  } = event.currentTarget;
+
+  const firstDelay = Number(delay.value);
+  const delaySteep = Number(step.value);
+  const amountInput = Number(amount.value);
 
   // create and display a notification to the user
-  Notify.info(`Creating ${amount} promises...`);
+  Notify.info(`Creating ${amountInput} promises...`);
 
   // create promises and handle fulfillment/rejection
-  for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < amountInput; i++) {
     const position = i + 1;
-    const delay = firstDelay + i * delayStep;
+    const delay = firstDelay + i * delaySteep;
     createPromise(position, delay)
       .then(({ position, delay }) => {
         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -40,13 +41,9 @@ function handleFormSubmit(event) {
       .catch(({ position, delay }) => {
         console.log(`❌ Rejected promise ${position} in ${delay}ms`);
         Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-      });
+      })
+      .finally(() => form.reset());
   }
-  event.currentTarget.reset();
-  // reset the form inputs
-  delayInput.value = '';
-  stepInput.value = '';
-  amountInput.value = '';
 }
 
 // add event listener to form submit event

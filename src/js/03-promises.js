@@ -27,7 +27,6 @@ function handleFormSubmit(event) {
   // create and display a notification to the user
   Notify.info(`Creating ${amount} promises...`);
 
-
   event.currentTarget.reset();
   // reset the form inputs
-
+}

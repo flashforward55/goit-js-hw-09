@@ -18,3 +18,5 @@ const amountInput = document.querySelector('input[name="amount"]');
 const firstDelay = Number(delayInput.value);
 const delayStep = Number(stepInput.value);
 const amount = Number(amountInput.value);
+
+Notify.info(`Creating ${amount} promises...`);

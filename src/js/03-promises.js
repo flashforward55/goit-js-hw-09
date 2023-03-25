@@ -13,6 +13,7 @@ function createPromise(position, delay) {
   });
 }
 
+// function to handle form submission and create promises
 function handleFormSubmit(event) {
   event.preventDefault();
 
@@ -27,6 +28,20 @@ function handleFormSubmit(event) {
   // create and display a notification to the user
   Notify.info(`Creating ${amount} promises...`);
 
+  // create promises and handle fulfillment/rejection
+  for (let i = 0; i < amount; i++) {
+    const position = i + 1;
+    const delay = firstDelay + i * delayStep;
+    createPromise(position, delay)
+      .then(({ position, delay }) => {
+        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      })
+      .catch(({ position, delay }) => {
+        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+      });
+  }
   event.currentTarget.reset();
   // reset the form inputs
   delayInput.value = '';
